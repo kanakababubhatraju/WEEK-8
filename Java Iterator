@@ -1,0 +1,43 @@
+import java.util.*;
+
+public class Solution {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int q = sc.nextInt();
+
+        ArrayList<Object> list = new ArrayList<>();
+
+        for (int i = 0; i < n; i++) {
+            list.add(sc.nextInt());
+        }
+
+        list.add("###");
+
+        for (int i = 0; i < q; i++) {
+            list.add(sc.next());
+        }
+
+        Iterator<Object> iterator = list.iterator();
+
+        while (iterator.hasNext()) {
+            Object value = iterator.next();
+
+            if (value instanceof String && !value.equals("###")) {
+                System.out.println(value);
+            }
+        }
+    }
+}
+OUTPUT:
+Input (stdin)
+2 2
+42
+10
+hello
+java
+Expected Output
+hello
+java
